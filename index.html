@@ -32,18 +32,37 @@
         </form>
 
         <nav class="user-nav">
-          <div class="user-nav__icon-box">
+          <div class="user-nav__icon-box user-nav__icon-box--1">
             <svg class="user-nav__icon">
               <use href="img/sprite.svg#icon-bookmark"></use>
             </svg>
             <span class="user-nav__notification">7</span>
+
+            <div class="user-nav__list-box user-nav__list-box--1">
+              <ul class="user-nav__list">
+                <li class="user-nav__item">Bookmark: Hotel Las Palmas</li>
+                <li class="user-nav__item">Bookmark: Flights to Portugal</li>
+                <li class="user-nav__item">Bookmark: Rent Honda Civic ZX</li>
+                <li class="user-nav__item">Check all bookmarks...</li>
+              </ul>
+            </div>
           </div>
-          <div class="user-nav__icon-box">
+
+          <div class="user-nav__icon-box user-nav__icon-box--2">
             <svg class="user-nav__icon">
               <use href="img/sprite.svg#icon-chat"></use>
             </svg>
             <span class="user-nav__notification">13</span>
+            <div class="user-nav__list-box user-nav__list-box--2">
+              <ul class="user-nav__list">
+                <li class="user-nav__item">New message from: Carol</li>
+                <li class="user-nav__item">New message from: Thomas</li>
+                <li class="user-nav__item">New message from: Annie</li>
+                <li class="user-nav__item">Check all messages...</li>
+              </ul>
+            </div>
           </div>
+
           <div class="user-nav__user">
             <img
               src="img/user.jpg"
@@ -51,6 +70,14 @@
               class="user-nav__user-photo"
             />
             <span class="user-nav__user-name">Jonas</span>
+            <div class="user-nav__list-box user-nav__list-box--3">
+              <ul class="user-nav__list">
+                <li class="user-nav__item">Profile</li>
+                <li class="user-nav__item">Bookings</li>
+                <li class="user-nav__item">Favourites</li>
+                <li class="user-nav__item">Settings</li>
+              </ul>
+            </div>
           </div>
         </nav>
       </header>
@@ -109,20 +136,31 @@
                 alt="Photo of hotel 1"
                 class="gallery__photo"
               />
+              <figcaption class="gallery__caption gallery-caption--1">
+                Night view
+              </figcaption>
             </figure>
+
             <figure class="gallery__item">
               <img
                 src="img/hotel-2.jpg"
                 alt="Photo of hotel 3"
                 class="gallery__photo"
               />
+              <figcaption class="gallery__caption gallery-caption--2">
+                Pools
+              </figcaption>
             </figure>
+
             <figure class="gallery__item">
               <img
                 src="img/hotel-3.jpg"
                 alt="Photo of hotel 3"
                 class="gallery__photo"
               />
+              <figcaption class="gallery__caption gallery-caption--3">
+                Attractions
+              </figcaption>
             </figure>
           </div>
 
@@ -155,7 +193,15 @@
               <svg class="overview__icon-location">
                 <use href="img/sprite.svg#icon-location-pin"></use>
               </svg>
-              <button class="btn-inline">Albufeira, Portugal</button>
+              <a
+                href="https://www.google.com/maps/place/Albufeira,+Portugalia/@37.2733395,-8.0311016,10.25z/data=!4m13!1m7!3m6!1s0xd1aceae38ddc41f:0xed22e7a562441045!2sAlbufeira,+Portugalia!3b1!8m2!3d37.0890719!4d-8.2478796!3m4!1s0xd1aceae38ddc41f:0xed22e7a562441045!8m2!3d37.0890719!4d-8.2478796"
+                type="button"
+                id="location"
+                class="btn-inline"
+                value="Albufeira Portugal"
+              >
+                Albufeira, Portugal
+              </a>
             </div>
 
             <div class="overview__rating">

@@ -73,6 +73,7 @@
   display: flex;
   align-items: center;
   align-self: stretch;
+  position: relative;
 
   & > * {
     padding: 0 2rem;
@@ -88,6 +89,15 @@
 
   &__icon-box {
     position: relative;
+
+    &--1:hover .user-nav__list-box--1 {
+      display: block;
+      opacity: 1;
+    }
+    &--2:hover .user-nav__list-box--2 {
+      opacity: 1;
+      display: block;
+    }
   }
 
   &__icon {
@@ -111,9 +121,35 @@
     justify-content: center;
   }
 
-  &__user {
+  &__user:hover .user-nav__list-box--3 {
+    opacity: 1;
+    display: block;
   }
 
+  &__list-box {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    opacity: 0;
+    background-color: var(--color-grey-light-3);
+    //padding: 2rem 4rem;
+    white-space: nowrap;
+    z-index: 1000;
+    display: none;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    padding: 1.2rem 2.5rem;
+
+    &:hover {
+      color: #fff;
+      background-color: var(--color-grey-dark-2);
+    }
+  }
   &__user-photo {
     height: 3.75rem;
     border-radius: 50%;
@@ -234,12 +270,54 @@
 
 .gallery {
   display: flex;
+  flex: 1;
+  transition: all 0.4s;
+
+  &__item {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    transition: all 0.2s;
+
+    &:hover .gallery__caption {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover .gallery__photo {
+      cursor: pointer;
+      transform: scale(1.1);
+      filter: blur(2px);
+      opacity: 0.65;
+
+      transition: all 0.4s ease-in-out;
+    }
+  }
 
   &__photo {
     width: 100%;
     display: block;
+    transition: all 0.4s;
   }
-  &__item {
+
+  &__caption {
+    letter-spacing: 0.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 5px 5px 5px #ba2650;
+    // display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    opacity: 0;
+    transition: all, 0.5s;
+    backface-visibility: hidden;
   }
 }
 
@@ -328,6 +406,7 @@
 
 .btn-inline {
   border: none;
+  text-decoration: none;
   color: var(--color-primary);
   font-size: inherit;
   border-bottom: 1px solid currentColor;
